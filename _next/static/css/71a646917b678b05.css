@@ -237,3 +237,25 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 }
+
+/* CV mobile: keep the identity and biography in a readable vertical flow.
+   This overrides the generic mobile spec-list rule for the CV intro card only. */
+@media (max-width: 768px) {
+  div.p-5[style*="border-left:3px solid var(--accent)"] > p:first-child,
+  div.p-5[style*="border-left: 3px solid var(--accent)"] > p:first-child {
+    display: block !important;
+    color: var(--text-secondary) !important;
+  }
+
+  div.p-5[style*="border-left:3px solid var(--accent)"] > p:first-child::before,
+  div.p-5[style*="border-left: 3px solid var(--accent)"] > p:first-child::before {
+    content: none !important;
+  }
+
+  div.p-5[style*="border-left:3px solid var(--accent)"] > p:first-child > strong,
+  div.p-5[style*="border-left: 3px solid var(--accent)"] > p:first-child > strong {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
